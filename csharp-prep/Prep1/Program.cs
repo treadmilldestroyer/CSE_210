@@ -19,12 +19,12 @@ class Program
         // Console.WriteLine($"Your favorite color is {color}.");
         
         Console.Write("What is your first name?");
-        string first_name = Console.ReadLine();
+        string firstName = Console.ReadLine();
 
         Console.Write("What is your last name?");
-        string last_name = Console.ReadLine();
-        
-        Console.WriteLine($"Your name is {last_name}, {first_name} {last_name}.");
+        string lastName = Console.ReadLine();
+
+        Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}.");
 
 
 
