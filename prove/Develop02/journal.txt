@@ -1,0 +1,6 @@
+Date: 05/18/2024 - Prompt: What was the most fun thing that I did today? 
+Response: This should be the only entry in the file.
+
+Date: 05/18/2024 - Prompt: Rose, bud, thorn. 
+Response: Here is another file that should be added.
+
