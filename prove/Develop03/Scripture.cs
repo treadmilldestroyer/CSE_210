@@ -3,18 +3,21 @@ class Scripture
 {
     private Reference _reference; 
     private List<Word> _words;
+    private Stack<List<Word>> _history;
 
 // The order of the parameters needed to be arranged to have the optional parameter at the end and it made sense to keep the rest of the reference parameters together so that is why the text of the scripture parameter is first.
     public Scripture(string text, string book, int chapter, int verse, int? endVerse = null) 
     {
         _reference = new Reference(book, chapter, verse, endVerse);
-        _words = new List<Word>(); // Create a en empty list where the separated words from the text string will be added into. 
+        _words = new List<Word>(); // Create a en empty list where the separated words from the text string will be added into.
+        _history = new Stack<List<Word>>(); 
 
         string[] splitText = text.Split(' ');
         foreach (string word in splitText)
         {
             _words.Add(new Word(word));
         }
+        _history.Push(new List<Word>(_words));
     }
 
 // This function is doing the majority of the work for this program. It actually displays the scripture reference and then the scripture. This function will be called over and over as more words are taken each time.
@@ -30,6 +33,25 @@ class Scripture
             else
             {
                 Console.Write(word.GetScriptureText() + " ");
+            }
+        }
+    }
+
+       public void DisplayRevertedData()
+    {
+        Console.WriteLine($"{_reference}");
+        foreach (List<Word> wordList in _history)
+        {
+            foreach (Word word in wordList)
+            {
+                if (word.Hidden())
+                { 
+                    Console.Write(new string('_', word.GetScriptureText().Length) + " ");
+                }
+                else
+                {
+                    Console.Write(word.GetScriptureText() + " ");
+                }
             }
         }
     }
@@ -52,35 +74,34 @@ class Scripture
         List<Word> visibleWords = GetVisibleWords();
         if (visibleWords.Count == 0)
             return false;
+        DisplayScriptureAndReference();
+        _history.Push(new List<Word>(_words));
+        Console.WriteLine(_history);
         
         Random random = new Random();
 
-        if (visibleWords.Count == 1)
+        int wordsToHide = Math.Min(3, visibleWords.Count);
+        for (int i = 0; i < wordsToHide; i++)
         {
-            visibleWords[0].Hide();
-            return true;
+            int randomIndex = random.Next(visibleWords.Count);
+            visibleWords[randomIndex].Hide();
+            visibleWords.RemoveAt(randomIndex);
         }
-        int randomIndex1 = random.Next(visibleWords.Count);
-        visibleWords[randomIndex1].Hide();
-
-        if(visibleWords.Count > 1)
-        {
-            int randomIndex2;
-            do
-            {
-                randomIndex2 = random.Next(visibleWords.Count);
-            }
-            while (randomIndex2 == randomIndex1);
-            visibleWords[randomIndex2].Hide();
-
-            int randomIndex3;
-            do
-            {
-                randomIndex3 = random.Next(visibleWords.Count);
-            } 
-            while (randomIndex3 == randomIndex1 || randomIndex3 == randomIndex2);
-            visibleWords[randomIndex3].Hide();
-        }
+        DisplayScriptureAndReference();
         return true;
+    }
+
+    public void RevertToPrevState()
+    {
+        if (_history.Count > 0)
+        {
+            _words = _history.Pop();
+            Console.WriteLine("Reverted to previous state.");
+            DisplayRevertedData();
+        }
+        else
+        {
+            Console.WriteLine("Nothing to revert.");
+        }
     }
 }
