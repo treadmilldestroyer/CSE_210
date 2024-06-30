@@ -1,0 +1,3 @@
+Checklist goal;Description of checklist goal;50;True
+Simple goal;Description;200;True
+Eternal Goal;description;50;0
