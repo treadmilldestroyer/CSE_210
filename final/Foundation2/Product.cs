@@ -5,6 +5,7 @@ class Product
     private double _pricePerUnit;
     private int _quantity;
 
+
     public Product (string productName, double productId, double pricePerUnit, int quantity)
     {
         _productName = productName;
@@ -12,14 +13,17 @@ class Product
         _pricePerUnit = pricePerUnit;
         _quantity = quantity;
     }
+
     public string GetProductName()
     {
         return _productName;
     }
+
     public double GetProductID()
     {
         return _productId;
     }
+
     public int GetQuantity()
     {
         return _quantity;

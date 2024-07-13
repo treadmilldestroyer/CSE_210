@@ -3,14 +3,13 @@ using System.Collections.Generic;
 class Order
 {
     private List<Product> _productsList;
-    // private Customer _customerName;
     private Customer _customerInfo;
     private double _orderTotal;
+
 
     public Order(List<Product> productsList, Customer customerInfo, double orderTotal = 0.0)
     {
         _productsList = productsList;
-        // _customerName = customerName;
         _customerInfo = customerInfo;
         _orderTotal = orderTotal;
     }
@@ -22,8 +21,8 @@ class Order
 
     public string CalculateOrderTotal()
     {
-        // If customer address is in USA shipping cost = $5
-        // Else shipping cost = $35
+        // If CustomerInUSA is true, shippingCost= $5
+        // Else shipppingCost= $35
         double shippingCost = _customerInfo.CustomerInUSA() ? 5.0 : 35.0;
         
         foreach (Product product in _productsList)

@@ -21,15 +21,7 @@ class Customer
         set { _address = value; }
 
     }
-    // public void SetCustomerAddress(Address address)
-    // {
-    //     _address = address;
-    // }
-    // public Address GetCustomerAddress()
-    // {
-    //     return _address;
-    // }
-
+    
     public bool CustomerInUSA()
     {
         if (_address.InUSA())
@@ -41,5 +33,4 @@ class Customer
             return false;
         }
     }
-
 }
