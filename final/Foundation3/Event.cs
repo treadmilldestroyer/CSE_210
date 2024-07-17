@@ -1,29 +1,33 @@
-class Event
+using System.Diagnostics;
+
+public abstract class Event
 {
     // All derived classes should use these 5 attributes
-    private string _eventType;
-    private string _eventTitle;
-    private string _description;
-    private string _date;
-    private string _time;
-    private string _address;
+    protected string _eventType;
+    protected string _eventTitle;
+    protected string _description;
+    protected string _date;
+    protected string _time;
+    protected Address _address;
 
-    public Event(string eventType, string eventTitle, string description, string date, string time, string address)
+    public Event(string eventType, string eventTitle, string description, string date, string time, Address address)
     {
+        _eventType = eventType;
         _eventTitle = eventTitle;
         _description = description;
         _date = date;
         _time = time;
         _address = address; 
-        _eventType = eventType;
     }
 
     public string StandardDetails()
     {
-        return $"Title: {_eventTitle}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress: {_address}";
+        return $"Title: {_eventTitle}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress:\n{_address}";
     }
+    public abstract string FullDetails();
 
-
-
-
+    public string ShortDescription()
+    {
+        return $"Type: {_eventType}\nTitle: {_eventTitle}\nDate: {_date}";
+    }
 }
