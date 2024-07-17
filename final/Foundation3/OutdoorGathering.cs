@@ -16,5 +16,4 @@ public class OutdoorGathering : Event
     {
         return $"Title: {_eventTitle}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress:\n{_address}\nWeather: {_weather}";
     }
-
 }

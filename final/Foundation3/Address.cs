@@ -13,14 +13,8 @@ public class Address
         _stateProvince = stateProvince;
         _zipCode = zipCode;
     }
-
-    // public string GetAddress()
-    // {
-    //     return $"{_streetAddress}\n{_city}, {_stateProvince}, {_zipCode}";
-    // }
     public override string ToString()
     {
         return $"{_streetAddress}\n{_city}, {_stateProvince}, {_zipCode}";
     }
-
 }

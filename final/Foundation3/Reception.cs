@@ -15,5 +15,4 @@ public class Reception : Event
     {
         return $"Title: {_eventTitle}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress:\n{_address}\nRSVP: {_emailAddress}";
     }
-
 }
