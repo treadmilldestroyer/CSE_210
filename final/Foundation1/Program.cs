@@ -47,14 +47,6 @@ class Program
             }
         }
 
-
-
-        //     foreach (Comment comment in commentList)
-        //     {
-        //         video.AddComments(comment);
-        //     }
-        // }
-
         foreach (Video video in videoList)
         {
             video.DisplayVideoInfo(); 
