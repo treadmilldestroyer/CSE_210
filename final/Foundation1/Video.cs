@@ -11,7 +11,6 @@ public class Video
         _author = author;
         _videoLength = videoLength;
         _commentsList = new List<Comment>();
-
     }
 
     public void DisplayVideoInfo()

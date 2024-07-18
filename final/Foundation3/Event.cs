@@ -2,7 +2,6 @@ using System.Diagnostics;
 
 public abstract class Event
 {
-    // All derived classes should use these 5 attributes
     protected string _eventType;
     protected string _eventTitle;
     protected string _description;
@@ -24,6 +23,7 @@ public abstract class Event
     {
         return $"Title: {_eventTitle}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress:\n{_address}";
     }
+    
     public abstract string FullDetails();
 
     public string ShortDescription()

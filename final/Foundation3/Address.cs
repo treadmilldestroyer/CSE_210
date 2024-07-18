@@ -5,7 +5,6 @@ public class Address
     private string _stateProvince;
     private string _zipCode;
 
-
     public Address(string streetAddress, string city, string stateProvince, string zipCode)
     {
         _streetAddress = streetAddress;
@@ -13,6 +12,7 @@ public class Address
         _stateProvince = stateProvince;
         _zipCode = zipCode;
     }
+    
     public override string ToString()
     {
         return $"{_streetAddress}\n{_city}, {_stateProvince}, {_zipCode}";

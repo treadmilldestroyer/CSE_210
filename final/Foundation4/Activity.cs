@@ -1,5 +1,4 @@
 using System.Runtime;
-
 public abstract class Activity
 {
     private string _date;
@@ -14,13 +13,13 @@ public abstract class Activity
     }
 
     public abstract double CalculateDistance();
+
     public abstract double CalculateSpeed();
+
     public abstract double CalculatePace();
 
     public string GetSummary()
     {
         return $"{_date} {_activityType} ({_lengthTime} min): Distance {CalculateDistance()}km, Speed: {CalculateSpeed()}kph, Pace: {CalculatePace()} min per km";
     }
-
-    
 }

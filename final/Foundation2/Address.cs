@@ -5,7 +5,6 @@ class Address
     private string _stateProvince;
     private string _country;
 
-
     public Address(string streetAddress, string city, string stateProvince, string country)
     {
         _streetAddress = streetAddress;
@@ -30,6 +29,7 @@ class Address
     {
         return $"{_streetAddress}\n{_city}, {_stateProvince}, {_country}";
     }    
+    
     public override string ToString()
     {
         return DisplayAddress();

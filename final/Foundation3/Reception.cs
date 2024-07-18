@@ -11,6 +11,7 @@ public class Reception : Event
     {
         return _emailAddress;
     }
+    
     public override string FullDetails()
     {
         return $"Title: {_eventTitle}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress:\n{_address}\nRSVP: {_emailAddress}";

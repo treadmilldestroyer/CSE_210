@@ -13,10 +13,12 @@ public class Lecture : Event
     {
         return _speaker;
     }
+
     public int GetCapacity()
     {
         return _capacity;
     }
+    
     public override string FullDetails()
     {
         return $"Title: {_eventTitle}\nSpeaker: {_speaker}\nDescription: {_description}\nCapacity: {_capacity}\nDate: {_date}\nTime: {_time}\nAddress:\n{_address}";

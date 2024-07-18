@@ -3,7 +3,6 @@ using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
-  
     static void Main(string[] args)
     {
         Video video1 = new Video("Video1", "Aaron", 120);
@@ -25,7 +24,6 @@ class Program
         Comment comment8 = new Comment("Eve", "Splendid.");
         Comment comment9 = new Comment("Alma", "Amazing!");
         Comment comment10 = new Comment("Ammon", "Wonderful!!");
-
 
         List<Comment> commentList = new List<Comment>()
         {

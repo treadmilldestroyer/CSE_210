@@ -6,6 +6,7 @@ public class Bike : Activity
     {
         _speed = speed;
     }
+    
     public override double CalculateDistance()
     {
         double distance = _speed * _lengthTime / 60;

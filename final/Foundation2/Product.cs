@@ -5,7 +5,6 @@ class Product
     private double _pricePerUnit;
     private int _quantity;
 
-
     public Product (string productName, double productId, double pricePerUnit, int quantity)
     {
         _productName = productName;
