@@ -2,10 +2,10 @@ public class Video
 {
     public string _title;
     public string _author;
-    public int _videoLength;
+    public double _videoLength;
     public List<Comment> _commentsList;
 
-    public Video(string title, string author, int videoLength) 
+    public Video(string title, string author, double videoLength) 
     {
         _title = title;
         _author = author;
