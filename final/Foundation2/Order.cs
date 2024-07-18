@@ -24,7 +24,7 @@ class Order
         // If CustomerInUSA is true, shippingCost= $5
         // Else shipppingCost= $35
         double shippingCost = _customerInfo.CustomerInUSA() ? 5.0 : 35.0;
-        // Create IF statement for case of no products.
+        
         foreach (Product product in _productsList)
         {
             double totalProductCost = product.CalculateTotalProductCost();
