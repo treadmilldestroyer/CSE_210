@@ -9,17 +9,20 @@ public class Swim : Activity
 
     public override double CalculateDistance()
     {
-        return _numLaps * 50 / 1000;
+        double distance = _numLaps * 50 / 1000;
+        return Math.Round(distance,2);
     }
 
     public override double CalculateSpeed()
     {
-        return CalculateDistance() / _lengthTime * 60;
+        double speed = CalculateDistance() / _lengthTime * 60;
+        return Math.Round(speed,2);
     }
     
     public override double CalculatePace()
     {
-        return 60 / CalculateSpeed();
+        double pace = 60 / CalculateSpeed();
+        return Math.Round(pace,2);
     }
 
 }
