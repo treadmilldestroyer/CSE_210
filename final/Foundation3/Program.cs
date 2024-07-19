@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         Address address = new Address("123 Main St.", "Rexburg", "Idaho", "80224");
-        Address address2 = new Address("321 Boulevard", "Lehi", "Utha", "98765");
+        Address address2 = new Address("321 Boulevard", "Lehi", "Utah", "98765");
         Address address3 = new Address("456 Avenue", "San Antonio", "Texas", "90123");
         
         Lecture lecture = new Lecture("Lecture", "Lecture 101", "This is going to be a fun lecture", "03/24/25", "1:00PM", address, "Samuel", 200);
