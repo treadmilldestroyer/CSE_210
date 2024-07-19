@@ -14,6 +14,6 @@ public class OutdoorGathering : Event
 
     public override string FullDetails()
     {
-        return $"Title: {_eventTitle}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress:\n{_address}\nWeather: {_weather}";
+        return $"Title: {_eventTitle}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress:\n{_address}\nEvent Type: {_eventType}\nWeather: {_weather}";
     }
 }

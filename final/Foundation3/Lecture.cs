@@ -21,6 +21,6 @@ public class Lecture : Event
     
     public override string FullDetails()
     {
-        return $"Title: {_eventTitle}\nSpeaker: {_speaker}\nDescription: {_description}\nCapacity: {_capacity}\nDate: {_date}\nTime: {_time}\nAddress:\n{_address}";
+        return $"Title: {_eventTitle}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress:\n{_address}\nEvent Type: {_eventType}\nSpeaker: {_speaker}\nCapacity: {_capacity}";
     }
 }

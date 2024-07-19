@@ -33,7 +33,7 @@ class Program
 
         Product product4 = new Product("RedBull", 11115, 2.50, 2);
         Product product5 = new Product("Candle", 11124, 10.99, 3);
-        Product product6 = new Product("Qunioa", 11222, 2.50, 5);
+        Product product6 = new Product("Quinoa", 11222, 2.50, 5);
 
         Order order2 = new Order(productsList2, customer2);
         order2.AddProducts(product4);
